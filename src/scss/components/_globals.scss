@@ -1,0 +1,67 @@
+@use '../abstracts/vars.scss' as *;
+
+body {
+  background-color: $clr-nt-lgr;
+}
+
+body,
+button {
+	font-family: $ff-pm;
+	font-size: 16px;
+}
+
+body {
+  background-image: url('../../../images/image-hero-mobile.jpg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  line-height: 1.5;
+  color: $clr-nt-gr;
+}
+
+h1, h2, h3 {
+  font-weight: 700;
+  color: $clr-nt-blk;
+}
+
+h1 { font-size: 1.3rem; }
+
+h2 { font-size: 1.15rem; }
+
+h3 { font-size: 1.05rem; }
+
+button {
+  font-weight: 500;
+  background-color: $clr-pm-cyan;
+  border: none;
+  border-radius: 3rem;
+  color: white;
+  padding: 0.75rem 2rem;
+}
+
+button:hover {
+  background-color: $clr-pm-Dcyan;
+}
+
+.hidden {
+  display: none;
+}
+
+.card {
+  background-color: white;
+  border-radius: 0.5rem;
+  padding: 2rem 1rem;
+}
+
+.card > * + * {
+  margin-top: 1rem;
+}
+
+.card + * {
+  margin-top: 1.5rem;
+}
+
+.number {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: $clr-nt-blk;
+}

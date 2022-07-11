@@ -14,48 +14,58 @@
 
 <body>
   <header>
-    <nav>
+    <nav class="navbar">
       <a><img src="images/logo.svg"></a>
-      <a>About</a>
-      <a>Discover</a>
-      <a>Get Started</a>
+      <button class="nav_btn"><img src="images/icon-hamburger.svg"></button>
+      <div class="hidden">
+        <a>About</a>
+        <a>Discover</a>
+        <a>Get Started</a>
+      </div>
     </nav>
   </header>
 
-  <main>
-    <section>
+  <main class="content">
+    <section class="content_header card">
+      <img class="mLogo" src="images/logo-mastercraft.svg">
       <h1>Mastercraft Bamboo Monitor Riser</h1>
       <p>A beautiful & handcrafted monitor stand to reduce neck and eye strain.</p>
 
-      <div>
-        <button>Back this project</button>
-        <button>
-          <img src="images/icon-bookmark.svg">
-          Bookmark
+      <div class="content_header_btnContainer">
+        <button class="backer_btn">Back this project</button>
+        <button class="bookmark_btn">
+          <svg width="56" height="56" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><circle fill="#2F2F2F" cx="28" cy="28" r="28"/><path fill="#B1B1B1" d="M23 19v18l5-5.058L33 37V19z"/></g></svg>
+          <p class="hidden">Bookmark</p>
         </button>
       </div>
     </section>
 
-    <section>
+    <section class="content_totals card">
       <div>
-        <div>
-          <h2>$89,914</h2>
-          <p>of $100,000 backed</p>
-        </div>
+        <p class="number">$89,914</p>
+        <p>of $100,000 backed</p>
+      </div>
 
-        <div>
-          <h2>5,007</h2>
-          <p>total backers</p>
-        </div>
+      <div class="totals_line"></div>
 
-        <div>
-          <h2>56</h2>
-          <p>days left</p>
-        </div>
+      <div>
+        <p class="number">5,007</p>
+        <p>total backers</p>
+      </div>
+
+      <div class="totals_line"></div>
+
+      <div>
+        <p class="number">56</p>
+        <p>days left</p>
+      </div>
+
+      <div class="totals_bar totals_percentage_container">
+        <div class="totals_bar totals_percentage"></div>
       </div>
     </section>
 
-    <section>
+    <section class="content_about card">
       <h2>About this project</h2>
 
       <p>
@@ -69,10 +79,10 @@
         to allow notepads, pens, and USB sticks to be stored under the stand.
       </p>
 
-      <section>
+      <section class="tier card">
         <div>
           <h3>Bamboo Stand</h3>
-          <p>Pledge $25 or more</p>
+          <p class="tier_minimum">Pledge $25 or more</p>
         </div>
 
         <p>
@@ -81,18 +91,18 @@
         </p>
 
         <div>
-          <div>
-            <p>101</p>
+          <div class="tier_remaining">
+            <p class="number">101</p>
             <p>left</p>
           </div>
-          <button>Select Reward</button>
+          <button class="tier_select_btn">Select Reward</button>
         </div>
       </section>
 
-      <section>
+      <section class="tier card">
         <div>
           <h3>Black Edition Stand</h3>
-          <p>Pledge $75 or more</p>
+          <p class="tier_minimum">Pledge $75 or more</p>
         </div>
 
         <p>
@@ -101,18 +111,18 @@
         </p>
 
         <div>
-          <div>
-            <p>64</p>
+          <div class="tier_remaining">
+            <p class="number">64</p>
             <p>left</p>
           </div>
-          <button>Select Reward</button>
+          <button class="tier_select_btn">Select Reward</button>
         </div>
       </section>
 
-      <section>
+      <section class="tier card">
         <div>
           <h3>Mahogany Special Edition</h3>
-          <p>Pledge $200 or more</p>
+          <p class="tier_minimum">Pledge $200 or more</p>
         </div>
 
         <p>
@@ -121,11 +131,11 @@
         </p>
 
         <div>
-          <div>
-            <p>0</p>
+          <div class="tier_remaining">
+            <p class="number">0</p>
             <p>left</p>
           </div>
-          <button>Out of Stock</button>
+          <button class="tier_select_btn tier_select_btn--oos">Out of Stock</button>
         </div>
       </section>
     </section>
@@ -133,11 +143,11 @@
 
   <!-- Selection modal start -->
 
-  <section>
+  <section class="modal hidden">
     <h2>Back this project</h2>
     <p>Want to support us in bringing Mastercraft Bamboo Monitor Riser out in the world?</p>
 
-    <section>
+    <section class="pledge">
       <div>
         <input type="radio" name="pledge">
         <div>
@@ -149,12 +159,12 @@
         </div>
       </div>
 
-      <div>
+      <div class="pledge_confirm">
         <button>Continue</button>
       </div>
     </section>
 
-    <section>
+    <section class="pledge">
       <div>
         <input type="radio" name="pledge">
         <div>
@@ -177,7 +187,7 @@
       </div>
 
       <!-- Selected pledge start -->
-      <div>
+      <div class="pledge_confirm">
         <p>Enter your pledge</p>
         <div>
           <p>$</p>
@@ -188,7 +198,7 @@
       <!-- Selected pledge end -->
     </section>
 
-    <section>
+    <section class="pledge">
       <div>
         <input type="radio" name="pledge">
         <div>
@@ -211,7 +221,7 @@
       </div>
 
       <!-- Selected pledge start -->
-      <div>
+      <div class="pledge_confirm">
         <p>Enter your pledge</p>
         <div>
           <p>$</p>
@@ -222,7 +232,7 @@
       <!-- Selected pledge end -->
     </section>
 
-    <section>
+    <section class="pledge">
       <div>
         <input type="radio" name="pledge">
         <div>
@@ -245,7 +255,7 @@
       </div>
 
       <!-- Selected pledge start -->
-      <div>
+      <div class="pledge_confirm">
         <p>Enter your pledge</p>
         <div>
           <p>$</p>
@@ -261,7 +271,7 @@
 
   <!-- Success modal start -->
 
-  <section>
+  <section class="modal hidden">
     <img src="images/icon-check.svg">
     <h2>Thanks for your support!</h2>
     <p>

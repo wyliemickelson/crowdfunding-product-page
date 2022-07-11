@@ -1,3 +1,5 @@
 @use 'components/reset.scss';
-@use 'abstracts/globals.scss' as *;
-
+@use 'components/globals.scss';
+@use 'components/header.scss';
+@use 'components/content.scss';
+@use 'abstracts/vars.scss' as *;
