@@ -1,12 +1,31 @@
+@use '../abstracts/vars.scss' as *;
+
 .navbar {
   box-shadow: inset 0 3rem 40px -30px black;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 2rem 1.5rem;
+}
 
-  .nav_btn {
-    padding: 0;
-    background-color: hsla(0,0%,100%, 0);
+.navbar_links {
+  display: none;
+  color: $clr-nt-lgr;
+}
+
+@media (min-width: 950px) {
+  .navbar {
+    justify-content: space-around;
+    gap: 30%;
+    padding-top: 3rem;
+  }
+
+  .navbar_btn {
+    display: none;
+  }
+
+  .navbar_links {
+    display: flex;
+    gap: 1rem;
   }
 }

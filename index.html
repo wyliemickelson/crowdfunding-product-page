@@ -16,8 +16,8 @@
   <header>
     <nav class="navbar">
       <a><img src="images/logo.svg"></a>
-      <button class="nav_btn"><img src="images/icon-hamburger.svg"></button>
-      <div class="hidden">
+      <button class="navbar_btn btn--clear"><img src="images/icon-hamburger.svg"></button>
+      <div class="navbar_links">
         <a>About</a>
         <a>Discover</a>
         <a>Get Started</a>
@@ -34,30 +34,37 @@
       <div class="content_header_btnContainer">
         <button class="backer_btn">Back this project</button>
         <button class="bookmark_btn">
-          <svg width="56" height="56" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><circle fill="#2F2F2F" cx="28" cy="28" r="28"/><path fill="#B1B1B1" d="M23 19v18l5-5.058L33 37V19z"/></g></svg>
+          <svg width="56" height="56" xmlns="http://www.w3.org/2000/svg">
+            <g fill="none" fill-rule="evenodd">
+              <circle fill="#2F2F2F" cx="28" cy="28" r="28" />
+              <path fill="#B1B1B1" d="M23 19v18l5-5.058L33 37V19z" />
+            </g>
+          </svg>
           <p class="hidden">Bookmark</p>
         </button>
       </div>
     </section>
 
     <section class="content_totals card">
-      <div>
-        <p class="number">$89,914</p>
-        <p>of $100,000 backed</p>
-      </div>
-
-      <div class="totals_line"></div>
-
-      <div>
-        <p class="number">5,007</p>
-        <p>total backers</p>
-      </div>
-
-      <div class="totals_line"></div>
-
-      <div>
-        <p class="number">56</p>
-        <p>days left</p>
+      <div class="content_totals_numbers">
+        <div>
+          <p class="number">$89,914</p>
+          <p>of $100,000 backed</p>
+        </div>
+  
+        <div class="totals_line"></div>
+  
+        <div>
+          <p class="number">5,007</p>
+          <p>total backers</p>
+        </div>
+  
+        <div class="totals_line"></div>
+  
+        <div>
+          <p class="number">56</p>
+          <p>days left</p>
+        </div>
       </div>
 
       <div class="totals_bar totals_percentage_container">
@@ -79,8 +86,8 @@
         to allow notepads, pens, and USB sticks to be stored under the stand.
       </p>
 
-      <section class="tier card">
-        <div>
+      <section class="tier card card--inner">
+        <div class="tier_header">
           <h3>Bamboo Stand</h3>
           <p class="tier_minimum">Pledge $25 or more</p>
         </div>
@@ -90,7 +97,7 @@
           you’ll be added to a special Backer member list.
         </p>
 
-        <div>
+        <div class="tier_footer">
           <div class="tier_remaining">
             <p class="number">101</p>
             <p>left</p>
@@ -99,8 +106,8 @@
         </div>
       </section>
 
-      <section class="tier card">
-        <div>
+      <section class="tier card card--inner">
+        <div class="tier_header">
           <h3>Black Edition Stand</h3>
           <p class="tier_minimum">Pledge $75 or more</p>
         </div>
@@ -110,7 +117,7 @@
           member list. Shipping is included.
         </p>
 
-        <div>
+        <div class="tier_footer">
           <div class="tier_remaining">
             <p class="number">64</p>
             <p>left</p>
@@ -119,8 +126,8 @@
         </div>
       </section>
 
-      <section class="tier card">
-        <div>
+      <section class="tier card card--inner">
+        <div class="tier_header">
           <h3>Mahogany Special Edition</h3>
           <p class="tier_minimum">Pledge $200 or more</p>
         </div>
@@ -130,7 +137,7 @@
           to our Backer member list. Shipping is included.
         </p>
 
-        <div>
+        <div class="tier_footer">
           <div class="tier_remaining">
             <p class="number">0</p>
             <p>left</p>
@@ -139,133 +146,145 @@
         </div>
       </section>
     </section>
-  </main>
 
-  <!-- Selection modal start -->
+    <section class="modal card">
+      <div class="modal_header">
+        <h2>Back this project</h2>
+        <button class="btn--clear">
+          <svg width="15" height="15" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M11.314 0l2.828 2.828L9.9 7.071l4.243 4.243-2.828 2.828L7.07 9.9l-4.243 4.243L0 11.314 4.242 7.07 0 2.828 2.828 0l4.243 4.242L11.314 0z"
+              fill="#000" fill-rule="evenodd" opacity=".4" />
+          </svg>
+        </button>
+      </div>
+      <p>Want to support us in bringing Mastercraft Bamboo Monitor Riser out in the world?</p>
 
-  <section class="modal hidden">
-    <h2>Back this project</h2>
-    <p>Want to support us in bringing Mastercraft Bamboo Monitor Riser out in the world?</p>
-
-    <section class="pledge">
-      <div>
-        <input type="radio" name="pledge">
-        <div>
-          <h3>Pledge with no reward</h3>
-          <p>
+      <section class="pledge card card--inner">
+        <div class="pledge_main">
+          <div class="pledge_header">
+            <input class="pledge_radio" type="radio" name="pledge">
+            <h3 class="pledge_title">Pledge with no reward</h3>
+          </div>
+          <p class="pledge_text">
             Choose to support us without a reward if you simply believe in our project. As a backer,
             you will be signed up to receive product updates via email.
           </p>
         </div>
-      </div>
 
-      <div class="pledge_confirm">
-        <button>Continue</button>
-      </div>
-    </section>
+        <div class="pledge_confirm hidden">
+          <button>Continue</button>
+        </div>
+      </section>
 
-    <section class="pledge">
-      <div>
-        <input type="radio" name="pledge">
-        <div>
-          <div>
-            <div>
+      <section class="pledge card card--inner">
+        <div class="pledge_main">
+          <div class="pledge_header">
+            <input class="pledge_radio" type="radio" name="pledge">
+            <div class="pledge_title">
               <h3>Bamboo Stand</h3>
-              <p>Pledge $25 or more</p>
-            </div>
-
-            <div>
-              <p>101</p>
-              <p>left</p>
+              <p class="tier_minimum">Pledge $25 or more</p>
             </div>
           </div>
-          <p>
+
+          <div class="tier_remaining pledge_remaining">
+            <p class="number">101</p>
+            <p>left</p>
+          </div>
+          <p class="pledge_text">
             You get an ergonomic stand made of natural bamboo. You've helped us launch our promotional campaign, and
             you’ll be added to a special Backer member list.
           </p>
         </div>
-      </div>
 
-      <!-- Selected pledge start -->
-      <div class="pledge_confirm">
-        <p>Enter your pledge</p>
-        <div>
-          <p>$</p>
-          <input type="text" placeholder="25">
-        </div>
-        <button>Continue</button>
-      </div>
-      <!-- Selected pledge end -->
-    </section>
-
-    <section class="pledge">
-      <div>
-        <input type="radio" name="pledge">
-        <div>
-          <div>
-            <div>
-              <h3>Black Edition Stand</h3>
-              <p>Pledge $75 or more</p>
+        <!-- Selected pledge start -->
+        <div class="pledge_confirm hidden">
+          <p>Enter your pledge</p>
+          <div class="pledge_inputs">
+            <div class="pledge_input">
+              <p>$</p>
+              <input class="pledge_input_amount" type="text" value="25">
             </div>
+            <button>Continue</button>
+          </div>
+        </div>
+        <!-- Selected pledge end -->
+      </section>
 
-            <div>
-              <p>64</p>
-              <p>left</p>
+      <section class="pledge card card--inner">
+        <div class="pledge_main">
+          <div class="pledge_header">
+            <input class="pledge_radio" type="radio" name="pledge">
+            <div class="pledge_title">
+              <h3>Black Edition Stand</h3>
+              <p class="tier_minimum">Pledge $75 or more</p>
             </div>
           </div>
-          <p>
+
+          <div class="tier_remaining pledge_remaining">
+            <p class="number">64</p>
+            <p>left</p>
+          </div>
+
+          <p class="pledge_text">
             You get a Black Special Edition computer stand and a personal thank you. You’ll be added to our Backer
             member list. Shipping is included.
           </p>
         </div>
-      </div>
 
-      <!-- Selected pledge start -->
-      <div class="pledge_confirm">
-        <p>Enter your pledge</p>
-        <div>
-          <p>$</p>
-          <input type="text" placeholder="75">
-        </div>
-        <button>Continue</button>
-      </div>
-      <!-- Selected pledge end -->
-    </section>
-
-    <section class="pledge">
-      <div>
-        <input type="radio" name="pledge">
-        <div>
-          <div>
-            <div>
-              <h3>Mahogany Special Edition</h3>
-              <p>Pledge $200 or more</p>
+        <!-- Selected pledge start -->
+        <div class="pledge_confirm hidden">
+          <p>Enter your pledge</p>
+          <div class="pledge_inputs">
+            <div class="pledge_input">
+              <p>$</p>
+              <input class="pledge_input_amount" type="text" value="75">
             </div>
+            <button>Continue</button>
+          </div>
+        </div>
+        <!-- Selected pledge end -->
+      </section>
 
-            <div>
-              <p>0</p>
-              <p>left</p>
+      <section class="pledge card card--inner pledge--unavailable">
+        <div class="pledge_main">
+          <div class="pledge_header">
+            <input class="pledge_radio" type="radio" name="pledge">
+            <div class="pledge_title">
+              <h3>Mahogany Special Edition</h3>
+              <p class="tier_minimum">Pledge $200 or more</p>
             </div>
           </div>
-          <p>
+
+          <div class="tier_remaining pledge_remaining">
+            <p class="number">0</p>
+            <p>left</p>
+          </div>
+          <p class="pledge_text">
             You get two Special Edition Mahogany stands, a Backer T-Shirt, and a personal thank you. You’ll be added
             to our Backer member list. Shipping is included.
           </p>
         </div>
-      </div>
 
-      <!-- Selected pledge start -->
-      <div class="pledge_confirm">
-        <p>Enter your pledge</p>
-        <div>
-          <p>$</p>
-          <input type="text" placeholder="200">
+        <!-- Selected pledge start -->
+        <div class="pledge_confirm hidden">
+          <p>Enter your pledge</p>
+          <div class="pledge_inputs">
+            <div class="pledge_input">
+              <p>$</p>
+              <input class="pledge_input_amount" type="text" value="200">
+            </div>
+            <button>Continue</button>
+          </div>
         </div>
-        <button>Continue</button>
-      </div>
-      <!-- Selected pledge end -->
+        <!-- Selected pledge end -->
+      </section>
     </section>
-  </section>
+  </main>
+
+  <!-- Selection modal start -->
+
+
 
   <!-- Selection modal end -->
 

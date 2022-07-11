@@ -40,16 +40,33 @@ button {
 
 button:hover {
   background-color: $clr-pm-Dcyan;
+  cursor: pointer;
 }
 
 .hidden {
   display: none;
 }
 
+.btn--clear {
+  padding: 0;
+  background-color: hsla(0deg, 0%, 100%, 0);
+}
+
+.btn--clear:hover {
+  opacity: 50%;
+  background-color: hsla(0deg, 0%, 100%, 0);
+}
+
 .card {
   background-color: white;
   border-radius: 0.5rem;
   padding: 2rem 1rem;
+  max-width: 800px;
+  margin-inline: auto;
+}
+
+.card--inner {
+  border: 2px solid $clr-nt-lgr;
 }
 
 .card > * + * {
@@ -64,4 +81,18 @@ button:hover {
   font-size: 1.5rem;
   font-weight: 700;
   color: $clr-nt-blk;
+}
+
+@media (min-width: 950px) {
+  body {
+    background-image: url('/images/image-hero-desktop.jpg');
+  }
+
+  .card {
+    padding-inline: 3rem;
+  }
+
+  .card--inner {
+    padding-inline: 1rem; 
+  }
 }

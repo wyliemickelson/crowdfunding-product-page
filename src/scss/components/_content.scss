@@ -1,96 +1,130 @@
 @use '../abstracts/vars.scss' as *;
 
 .content {
+  position: relative;
   width: 90%;
   margin-inline: auto;
-  margin-top: 11rem;
+  margin-top: 9rem;
+}
 
-  .content_header {
-    padding-top: 2.5rem;
-    text-align: center;
-    position: relative;
+.content_header {
+  padding-top: 2.5rem;
+  text-align: center;
+  position: relative;
+}
 
-    .mLogo {
-      display: inline;
-      position: absolute;
-      top: -1.75rem;
-      left: Calc(50% - 28px);
-    }
+.mLogo {
+  display: inline;
+  position: absolute;
+  top: -1.75rem;
+  left: Calc(50% - 28px);
+}
 
-    .content_header_btnContainer {
-      display: flex;
-      justify-content: center;
-      gap: 0.5rem;
+.content_header_btnContainer {
+  display: flex;
+  justify-content: space-between;
+}
 
-      .backer_btn {
-        padding-inline: 3rem;
-      }
+.backer_btn {
+  padding-inline: 3rem;
+}
 
-      .bookmark_btn {
-        padding: 0;
-        box-shadow: none;
-        background-color: white;
-      }
+.bookmark_btn {
+  padding: 0;
+  box-shadow: none;
+  background-color: white;
+}
 
-      .bookmark_on {
-        svg circle {
-          fill: $clr-pm-Dcyan;
-        }
-        svg path {
-          fill: white;
-        }
-      }
-    }
+.bookmark_btn:hover {
+  background-color: white;
+}
+
+.bookmark_on {
+  svg circle {
+    fill: $clr-pm-Dcyan;
+  }
+  svg path {
+    fill: white;
+  }
+}
+
+.content_totals {
+  text-align: center;
+}
+
+.content_totals_numbers > * {
+  margin-top: 1.5rem;
+}
+
+.totals_line {
+  margin-inline: auto;
+  width: 4rem;
+  border-bottom: 1px solid $clr-nt-gr;
+}
+
+.totals_bar {
+  height: 0.75rem;
+  border-radius: 2rem;
+}
+
+.totals_percentage_container {
+  background-color: $clr-nt-lgr;
+}
+
+.totals_percentage {
+  background-color: $clr-pm-cyan;
+  width: 90%;
+}
+
+.tier_minimum {
+  color: $clr-pm-cyan;
+  font-weight: 500;
+}
+
+.tier_remaining {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.tier_remaining .number {
+  font-size: 1.2rem;
+}
+
+.tier_select_btn {
+  margin-top: 1rem;
+}
+
+.tier_select_btn--oos {
+  background-color: $clr-nt-gr;
+  opacity: 50%;
+  pointer-events: none;
+}
+
+@media (min-width: 950px) {
+
+  .content {
+    margin-top: 7rem;
+  }
+
+  .tier_header,
+  .tier_footer {
+    display: flex;
+    justify-content: space-between;
   }
 
   .content_totals {
-    text-align: center;
-
-    .totals_line {
-      margin-inline: auto;
-      width: 4rem;
-      border-bottom: 1px solid $clr-nt-gr;
-    }
-
-    .totals_bar {
-      height: 0.75rem;
-      border-radius: 2rem;
-    }
-
-    .totals_percentage_container {
-      background-color: $clr-nt-lgr;
-    }
-
-    .totals_percentage {
-      background-color: $clr-pm-cyan;
-      width: 90%;
-    }
+    text-align: left;
   }
 
-  .content_about {
+  .content_totals_numbers {
+    display: flex;
+  }
 
-    .tier {
-      border: 2px solid $clr-nt-lgr;
-
-      .tier_minimum {
-        color: $clr-pm-cyan;
-        font-weight: 500;
-      }
-
-      .tier_remaining {
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-      }
-
-      .tier_select_btn {
-        margin-top: 1rem;
-      }
-
-      .tier_select_btn--oos {
-        background-color: $clr-nt-gr;
-        opacity: 50%;
-      }
-    }
+  .totals_line {
+    width: 1px;
+    border-right: 1px solid $clr-nt-gr;
+    border-bottom: none;
+    margin-inline: 3rem;
   }
 }

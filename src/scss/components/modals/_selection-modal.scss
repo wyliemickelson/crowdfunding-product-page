@@ -1,0 +1,116 @@
+@use '../../abstracts/vars.scss' as *;
+
+.modal {
+  position: absolute;
+  top: -6rem;
+  left: 0;
+  right: 0;
+  margin: auto
+}
+
+.modal_header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.pledge_main {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.pledge_header {
+  display: flex;
+  gap: 1rem;
+}
+
+.pledge_remaining {
+  order: 1;
+}
+
+.pledge_confirm {
+  border-top: 2px solid $clr-nt-lgr;
+  text-align: center;
+  padding: 1rem 1rem 0rem 1rem;
+}
+
+.pledge_inputs {
+  display: flex;
+  justify-content: center;
+  margin-top: 1.5rem;
+  gap: 10%;
+}
+
+.pledge_radio {
+  width: 1.3rem;
+}
+
+.pledge_radio:checked {
+  background-color: $clr-pm-cyan;
+}
+
+.pledge_input {
+  max-width: 40%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: $ff-pm;
+  border: 2px solid $clr-nt-lgr;
+  border-radius: 2rem;
+}
+
+.pledge_input_amount {
+  max-width: 50%;
+  border: none;
+  text-align: center;
+  font-family: $ff-pm;
+  font-weight: 700;
+  font-size: 1rem;
+  color: $clr-nt-blk;
+}
+
+.pledge_input_amount::placeholder {
+  color: $clr-nt-blk;
+}
+
+.pledge--unavailable {
+  opacity: 50%;
+  pointer-events: none;
+}
+
+@media (min-width: 950px) {
+  .modal {
+    top: -2rem;
+  }
+
+  .pledge_main {
+    display: grid;
+    grid-template-columns: 5% 1fr 10%;
+    grid-column-gap: 0.75rem;
+    grid-row-gap: 1rem;
+  }
+
+  .pledge_radio {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+    width: 1.3rem;
+    justify-self: center;
+  }
+
+  .pledge_header {
+    display: contents;
+  }
+
+  .pledge_title {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    grid-column: 2 / 3;
+  }
+
+  .pledge_text {
+    grid-column: 2 / 4;
+    grid-row: 2 / 3;
+  }
+}
