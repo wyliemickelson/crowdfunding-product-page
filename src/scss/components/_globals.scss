@@ -11,12 +11,20 @@ button {
 }
 
 body {
-  background-image: url('../../../images/image-hero-mobile.jpg');
+  background-image: url('../../images/image-hero-mobile.jpg');
   background-size: contain;
   background-repeat: no-repeat;
   line-height: 1.5;
   color: $clr-nt-gr;
+  overflow: auto;
 }
+
+::-webkit-scrollbar { display: block; }
+
+::-webkit-scrollbar-thumb { 
+  background-color: rgba(128, 128, 128, 0.45);
+  box-shadow: 0 0 1px rgba(255, 255, 255, .5);
+ }
 
 h1, h2, h3 {
   font-weight: 700;
