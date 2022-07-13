@@ -7,7 +7,7 @@ const tierSelectBtns = Array.from(document.getElementsByClassName('tier_select_b
 const pledgeTitles = Array.from(document.getElementsByClassName('pledgeTitle'));
 const pledgeDefault = document.getElementById('pledgeDefault');
 
-export function setupListeners() {
+export function setupEventListeners() {
   pledgeRadioBtns.forEach((btn) => btn.addEventListener('click', eventHandlers.pledgeRadioBtnHandler))
 
   tierSelectBtns.forEach((btn) => btn.addEventListener('click', () => {

@@ -122,4 +122,21 @@
     grid-column: 2 / 4;
     grid-row: 2 / 3;
   }
+
+  .pledge_inputs {
+    margin: 0;
+    gap: 1rem;
+    justify-content: flex-end;
+  }
+
+  .pledge_confirm {
+    padding-top: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .pledge--noreward {
+    justify-content: flex-end;
+  }
 }

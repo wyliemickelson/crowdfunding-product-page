@@ -1,4 +1,4 @@
-import { setupListeners } from "./events";
+import { setupEventListeners } from "./events";
 import "../scss/main.scss";
 
-setupListeners();
+setupEventListeners();
