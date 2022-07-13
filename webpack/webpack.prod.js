@@ -1,7 +1,6 @@
 const path = require("path");
 const common = require("./webpack.common");
 const { merge } = require('webpack-merge');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = merge(common, {
@@ -9,11 +8,11 @@ module.exports = merge(common, {
   output: {
     filename: "main.[contenthash].js",
     path: path.resolve(__dirname, "../dist"),
-    assetModuleFilename: "assets/[name].[hash].[ext]"
+    assetModuleFilename: "assets/[name].[hash].[ext]",
+    clean: true
   },
   plugins: [
-    new MiniCssExtractPlugin({filename: "[name].[contenthash].css"}),
-    new CleanWebpackPlugin()
+    new MiniCssExtractPlugin({filename: "[name].[contenthash].css"})
   ],
   module: {
     rules: [
@@ -25,6 +24,10 @@ module.exports = merge(common, {
           "sass-loader"
         ]
       },
+      {
+        test: /\.(png|svg|jpg|jpeg|gif)$/i,
+        type: 'asset/resource'
+      }
     ]
   }
 });
