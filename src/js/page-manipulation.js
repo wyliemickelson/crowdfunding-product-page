@@ -1,4 +1,5 @@
 const selectionModal = document.getElementById('selectionModal');
+const pageMask = document.getElementById('pageMask');
 
 export const pageManipulation = {
   toggleSelectionModal: () => {
@@ -10,10 +11,10 @@ export const pageManipulation = {
   updatePledges: () => {
     let checkedBtn = document.querySelector('input[name="pledge"]:checked');
     let uncheckedBtns = Array.from(document.querySelectorAll('input[name="pledge"]:not(:checked)'));
-    let pledgeConfirm = checkedBtn.parentElement.parentElement.nextElementSibling;
+    let pledgeConfirm = getPledgeConfirm(checkedBtn);
     pledgeConfirm.classList.remove('hidden');
     uncheckedBtns.forEach((uncheckedBtn) => {
-      pledgeConfirm = uncheckedBtn.parentElement.parentElement.nextElementSibling;
+      pledgeConfirm = getPledgeConfirm(uncheckedBtn);
       pledgeConfirm.classList.add('hidden');
     })
     return checkedBtn;
@@ -21,5 +22,15 @@ export const pageManipulation = {
   
   checkRadioBtn: (btn) => {
     btn.checked = true;
+  },
+
+  togglePageMask: () => {
+    pageMask.classList.toggle('hidden');
   }
+}
+
+function getPledgeConfirm(child) {
+  let pledge = child.closest('.pledge');
+  let pledgeConfirm = pledge.querySelector('.pledge_confirm');
+  return pledgeConfirm;
 }

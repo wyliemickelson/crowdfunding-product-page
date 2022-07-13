@@ -8,7 +8,10 @@ const pledgeTitles = Array.from(document.getElementsByClassName('pledgeTitle'));
 const pledgeDefault = document.getElementById('pledgeDefault');
 
 export function setupEventListeners() {
-  pledgeRadioBtns.forEach((btn) => btn.addEventListener('click', eventHandlers.pledgeRadioBtnHandler))
+  pledgeRadioBtns.forEach((btn) => btn.addEventListener('click', eventHandlers.pledgeRadioBtnHandler));
+  pledgeTitles.forEach((titleEle) => titleEle.addEventListener('click', () => {
+    eventHandlers.pledgeTitleHandler(titleEle);
+  }));
 
   tierSelectBtns.forEach((btn) => btn.addEventListener('click', () => {
     eventHandlers.tierSelectHandler(btn);
@@ -22,9 +25,17 @@ const eventHandlers = {
   backProjectBtnHandler: () => {
     pageManipulation.checkRadioBtn(pledgeDefault);
     pageManipulation.toggleSelectionModal();
+    pageManipulation.togglePageMask();
   },
   
   pledgeRadioBtnHandler: () => {
+    pageManipulation.updatePledges();
+  },
+
+  pledgeTitleHandler: (titleEle) => {
+    let pledgeHeader = titleEle.closest('.pledge_header');
+    let pledgeRadioBtn = pledgeHeader.querySelector('.pledge_radio');
+    pageManipulation.checkRadioBtn(pledgeRadioBtn);
     pageManipulation.updatePledges();
   },
 
@@ -34,5 +45,6 @@ const eventHandlers = {
     let tierBtn = pledgeTitle.parentElement.parentElement.querySelector('.pledge_radio');
     pageManipulation.checkRadioBtn(tierBtn);
     pageManipulation.toggleSelectionModal();
+    pageManipulation.togglePageMask();
   }
 }
