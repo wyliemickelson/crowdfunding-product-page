@@ -1,3 +1,3 @@
 export function sayHello() {
-  alert('helloooo');
+  alert('hellooo');
 }
