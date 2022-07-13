@@ -1,23 +1,29 @@
+import { retrieveElements } from "./retrieve-elements";
+import { numberFormats } from "./number-formatting";
+
 const selectionModal = document.getElementById('selectionModal');
 const pageMask = document.getElementById('pageMask');
+const totalBackedEle = document.getElementById('totalAmtBacked');
+const totalBackersEle = document.getElementById('totalBackers');
 
 export const pageManipulation = {
   toggleSelectionModal: () => {
     selectionModal.classList.toggle('hidden');
-    let checkedBtn = pageManipulation.updatePledges();
+    pageManipulation.updatePledges();
+    let checkedBtn = retrieveElements.getCheckedBtn();
     checkedBtn.scrollIntoView({ block: 'center' });
+    pageManipulation.togglePageMask();
   },
   
   updatePledges: () => {
-    let checkedBtn = document.querySelector('input[name="pledge"]:checked');
+    let checkedBtn = retrieveElements.getCheckedBtn();
     let uncheckedBtns = Array.from(document.querySelectorAll('input[name="pledge"]:not(:checked)'));
-    let pledgeConfirm = getPledgeConfirm(checkedBtn);
+    let pledgeConfirm = retrieveElements.getPledgeConfirm(checkedBtn);
     pledgeConfirm.classList.remove('hidden');
     uncheckedBtns.forEach((uncheckedBtn) => {
-      pledgeConfirm = getPledgeConfirm(uncheckedBtn);
+      pledgeConfirm = retrieveElements.getPledgeConfirm(uncheckedBtn);
       pledgeConfirm.classList.add('hidden');
     })
-    return checkedBtn;
   },
   
   checkRadioBtn: (btn) => {
@@ -26,11 +32,17 @@ export const pageManipulation = {
 
   togglePageMask: () => {
     pageMask.classList.toggle('hidden');
-  }
-}
+  },
 
-function getPledgeConfirm(child) {
-  let pledge = child.closest('.pledge');
-  let pledgeConfirm = pledge.querySelector('.pledge_confirm');
-  return pledgeConfirm;
+  addToTotal: (amount) => {
+    let currTotal = Number(totalBackedEle.textContent.replace(/\D/g,''));
+    currTotal += amount;
+    currTotal = numberFormats.USD.format(currTotal);
+    totalBackedEle.textContent = currTotal;
+    
+    let currBackers = Number(totalBackersEle.textContent.replace(/\D/g,''));
+    currBackers += 1;
+    currBackers = numberFormats.standard.format(currBackers);
+    totalBackersEle.textContent = currBackers;
+  }
 }

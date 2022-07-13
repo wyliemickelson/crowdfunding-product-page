@@ -5,6 +5,7 @@ const selectionModalCloseBtn = document.getElementById('selectionModalCloseBtn')
 const pledgeRadioBtns = Array.from(document.getElementsByClassName('pledge_radio'));
 const tierSelectBtns = Array.from(document.getElementsByClassName('tier_select_btn'));
 const pledgeTitles = Array.from(document.getElementsByClassName('pledgeTitle'));
+const pledgeContinueBtns = Array.from(document.getElementsByClassName('pledgeContinue'));
 const pledgeDefault = document.getElementById('pledgeDefault');
 
 export function setupEventListeners() {
@@ -17,6 +18,10 @@ export function setupEventListeners() {
     eventHandlers.tierSelectHandler(btn);
   }))
 
+  pledgeContinueBtns.forEach((btn) => btn.addEventListener('click', () => {
+    eventHandlers.continueBtnHandler(btn);
+  }));
+
   backProjectBtn.addEventListener('click', eventHandlers.backProjectBtnHandler);
   selectionModalCloseBtn.addEventListener('click', eventHandlers.backProjectBtnHandler);
 }
@@ -25,7 +30,6 @@ const eventHandlers = {
   backProjectBtnHandler: () => {
     pageManipulation.checkRadioBtn(pledgeDefault);
     pageManipulation.toggleSelectionModal();
-    pageManipulation.togglePageMask();
   },
   
   pledgeRadioBtnHandler: () => {
@@ -45,6 +49,14 @@ const eventHandlers = {
     let tierBtn = pledgeTitle.parentElement.parentElement.querySelector('.pledge_radio');
     pageManipulation.checkRadioBtn(tierBtn);
     pageManipulation.toggleSelectionModal();
-    pageManipulation.togglePageMask();
+  },
+
+  continueBtnHandler: (btn) => {
+    let pledgeInputs = btn.closest('.pledge_inputs');
+    if (pledgeInputs) {
+      let pledgeAmt = pledgeInputs.querySelector('.pledge_input_amount').value;
+      pageManipulation.addToTotal(Number(pledgeAmt));
+    }
+    pageManipulation.toggleSelectionModal();
   }
 }
