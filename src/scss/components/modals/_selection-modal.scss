@@ -23,6 +23,11 @@
 .pledge_header {
   display: flex;
   gap: 1rem;
+
+  h3:hover {
+    color: $clr-pm-cyan;
+    cursor: pointer;
+  }
 }
 
 .pledge_remaining {
@@ -44,6 +49,10 @@
 
 .pledge_radio {
   width: 1.3rem;
+}
+
+.pledge_radio:hover {
+  cursor: pointer;
 }
 
 .pledge_radio:checked {
