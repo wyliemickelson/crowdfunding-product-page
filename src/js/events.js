@@ -7,6 +7,7 @@ const tierSelectBtns = Array.from(document.getElementsByClassName('tier_select_b
 const pledgeTitles = Array.from(document.getElementsByClassName('pledgeTitle'));
 const pledgeContinueBtns = Array.from(document.getElementsByClassName('pledgeContinue'));
 const pledgeDefault = document.getElementById('pledgeDefault');
+const modalSuccessBtn = document.getElementById('modalSuccessBtn');
 
 export function setupEventListeners() {
   pledgeRadioBtns.forEach((btn) => btn.addEventListener('click', eventHandlers.pledgeRadioBtnHandler));
@@ -24,6 +25,7 @@ export function setupEventListeners() {
 
   backProjectBtn.addEventListener('click', eventHandlers.backProjectBtnHandler);
   selectionModalCloseBtn.addEventListener('click', eventHandlers.backProjectBtnHandler);
+  modalSuccessBtn.addEventListener('click', eventHandlers.modalSuccessBtnHandler);
 }
 
 const eventHandlers = {
@@ -58,5 +60,10 @@ const eventHandlers = {
       pageManipulation.addToTotal(Number(pledgeAmt));
     }
     pageManipulation.toggleSelectionModal();
+    pageManipulation.toggleSuccessModal();
+  },
+
+  modalSuccessBtnHandler: () => {
+    pageManipulation.toggleSuccessModal();
   }
 }
