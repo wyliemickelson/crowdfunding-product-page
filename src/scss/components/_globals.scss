@@ -51,6 +51,11 @@ button:hover {
   cursor: pointer;
 }
 
+a:hover {
+  color: $clr-pm-cyan;
+  cursor: pointer;
+}
+
 .hidden {
   display: none !important;
 }
@@ -99,6 +104,10 @@ button:hover {
   bottom: 0;
   left: 0;
   z-index: 1;
+}
+
+.mask-secondary {
+  position: relative;
 }
 
 @media (min-width: 950px) {

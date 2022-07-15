@@ -1,4 +1,5 @@
 import { pageManipulation } from "./page-manipulation";
+import { backerStats } from "./backer-stats";
 
 const backProjectBtn = document.getElementById('backProjectBtn');
 const selectionModalCloseBtn = document.getElementById('selectionModalCloseBtn');
@@ -8,6 +9,8 @@ const pledgeTitles = Array.from(document.getElementsByClassName('pledgeTitle'));
 const pledgeContinueBtns = Array.from(document.getElementsByClassName('pledgeContinue'));
 const pledgeDefault = document.getElementById('pledgeDefault');
 const modalSuccessBtn = document.getElementById('modalSuccessBtn');
+const navBarHam = document.getElementById('navbarBtn');
+const navBarClose = document.getElementById('closeNavBtn');
 
 export function setupEventListeners() {
   pledgeRadioBtns.forEach((btn) => btn.addEventListener('click', eventHandlers.pledgeRadioBtnHandler));
@@ -26,6 +29,9 @@ export function setupEventListeners() {
   backProjectBtn.addEventListener('click', eventHandlers.backProjectBtnHandler);
   selectionModalCloseBtn.addEventListener('click', eventHandlers.backProjectBtnHandler);
   modalSuccessBtn.addEventListener('click', eventHandlers.modalSuccessBtnHandler);
+
+  navBarHam.addEventListener('click', eventHandlers.handleNavBar);
+  navBarClose.addEventListener('click', eventHandlers.handleNavBar);
 }
 
 const eventHandlers = {
@@ -57,13 +63,19 @@ const eventHandlers = {
     let pledgeInputs = btn.closest('.pledge_inputs');
     if (pledgeInputs) {
       let pledgeAmt = pledgeInputs.querySelector('.pledge_input_amount').value;
-      pageManipulation.addToTotal(Number(pledgeAmt));
+      backerStats.totalMoneyBacked += Number(pledgeAmt);
     }
+    backerStats.totalBackers += 1;
     pageManipulation.toggleSelectionModal();
     pageManipulation.toggleSuccessModal();
+    pageManipulation.updateBackerStats();
   },
 
   modalSuccessBtnHandler: () => {
     pageManipulation.toggleSuccessModal();
+  },
+
+  handleNavBar: () => {
+    pageManipulation.toggleMobileNav();
   }
 }

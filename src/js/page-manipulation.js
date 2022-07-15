@@ -1,11 +1,15 @@
 import { retrieveElements } from "./retrieve-elements";
 import { numberFormats } from "./number-formatting";
+import { backerStats } from "./backer-stats";
 
 const selectionModal = document.getElementById('selectionModal');
 const successModal = document.getElementById('successModal');
 const pageMask = document.getElementById('pageMask');
 const totalBackedEle = document.getElementById('totalAmtBacked');
 const totalBackersEle = document.getElementById('totalBackers');
+const navBarHam = document.getElementById('navbarBtn');
+const navBarClose = document.getElementById('closeNavBtn');
+const navMobile = document.getElementById('mobileNav');
 
 export const pageManipulation = {
   toggleSelectionModal: () => {
@@ -41,15 +45,15 @@ export const pageManipulation = {
     pageMask.classList.toggle('hidden');
   },
 
-  addToTotal: (amount) => {
-    let currTotal = Number(totalBackedEle.textContent.replace(/\D/g,''));
-    currTotal += amount;
-    currTotal = numberFormats.USD.format(currTotal);
-    totalBackedEle.textContent = currTotal;
-    
-    let currBackers = Number(totalBackersEle.textContent.replace(/\D/g,''));
-    currBackers += 1;
-    currBackers = numberFormats.standard.format(currBackers);
-    totalBackersEle.textContent = currBackers;
+  toggleMobileNav: () => {
+    navMobile.classList.toggle('hidden');
+    navBarHam.classList.toggle('hidden');
+    navBarClose.classList.toggle('hidden');
+    pageManipulation.togglePageMask();
+  },
+
+  updateBackerStats: () => {
+    totalBackedEle.textContent = numberFormats.USD.format(backerStats.totalMoneyBacked);
+    totalBackersEle.textContent = numberFormats.standard.format(backerStats.totalBackers);
   }
 }
